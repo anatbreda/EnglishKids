@@ -1,0 +1,103 @@
+{
+  "lessonId": 5,
+  "title": "Animals",
+  "titleHe": "חיות",
+  "introHe": "היום נלמד שמות של חיות באנגלית.",
+  "reviewWords": ["friend", "book"],
+  "newWords": [
+    {
+      "id": "dog",
+      "en": "dog",
+      "he": "כלב",
+      "imagePrompt": "cartoon icon of a friendly brown dog",
+      "audioText": "dog"
+    },
+    {
+      "id": "cat",
+      "en": "cat",
+      "he": "חתול",
+      "imagePrompt": "cartoon icon of a cute orange cat",
+      "audioText": "cat"
+    },
+    {
+      "id": "bird",
+      "en": "bird",
+      "he": "ציפור",
+      "imagePrompt": "cartoon icon of a small blue bird",
+      "audioText": "bird"
+    },
+    {
+      "id": "fish",
+      "en": "fish",
+      "he": "דג",
+      "imagePrompt": "cartoon icon of an orange fish in water",
+      "audioText": "fish"
+    },
+    {
+      "id": "lion",
+      "en": "lion",
+      "he": "אריה",
+      "imagePrompt": "cartoon icon of a lion with a big mane",
+      "audioText": "lion"
+    },
+    {
+      "id": "rabbit",
+      "en": "rabbit",
+      "he": "ארנב",
+      "imagePrompt": "cartoon icon of a white rabbit with long ears",
+      "audioText": "rabbit"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "I have a dog.",
+      "he": "יש לי כלב.",
+      "matchImagePrompt": "cartoon icon of a friendly brown dog",
+      "matchWordId": "dog",
+      "distractorWordIds": ["cat", "rabbit"]
+    },
+    {
+      "id": "s2",
+      "en": "The cat is small.",
+      "he": "החתול קטן.",
+      "matchImagePrompt": "cartoon icon of a cute orange cat",
+      "matchWordId": "cat",
+      "distractorWordIds": ["dog", "bird"]
+    },
+    {
+      "id": "s3",
+      "en": "Look at the bird!",
+      "he": "תראה/י את הציפור!",
+      "matchImagePrompt": "cartoon icon of a small blue bird",
+      "matchWordId": "bird",
+      "distractorWordIds": ["fish", "lion"]
+    },
+    {
+      "id": "s4",
+      "en": "The lion is big.",
+      "he": "האריה גדול.",
+      "matchImagePrompt": "cartoon icon of a lion with a big mane",
+      "matchWordId": "lion",
+      "distractorWordIds": ["rabbit", "fish"]
+    }
+  ],
+  "speakingPrompts": [
+    {
+      "id": "sp1",
+      "promptHe": "תגיד/י: יש לי כלב",
+      "expectedPhrase": "i have a dog",
+      "acceptableVariants": ["i have dog", "i have got a dog"]
+    },
+    {
+      "id": "sp2",
+      "promptHe": "תגיד/י: החתול קטן",
+      "expectedPhrase": "the cat is small",
+      "acceptableVariants": ["cat is small", "the cat is very small"]
+    }
+  ],
+  "game": {
+    "type": "matching",
+    "wordIds": ["dog", "cat", "bird", "fish", "lion", "rabbit"]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "lessonId": 2,
+  "title": "My House",
+  "titleHe": "הבית שלי",
+  "introHe": "היום נלמד את המילים של הבית והחדרים שלנו.",
+  "reviewWords": ["family", "mother"],
+  "newWords": [
+    {
+      "id": "house",
+      "en": "house",
+      "he": "בית",
+      "imagePrompt": "cartoon icon of a small house with a red roof",
+      "audioText": "house"
+    },
+    {
+      "id": "room",
+      "en": "room",
+      "he": "חדר",
+      "imagePrompt": "cartoon icon of a cozy room with a rug and a lamp",
+      "audioText": "room"
+    },
+    {
+      "id": "bed",
+      "en": "bed",
+      "he": "מיטה",
+      "imagePrompt": "cartoon icon of a bed with a pillow and blanket",
+      "audioText": "bed"
+    },
+    {
+      "id": "door",
+      "en": "door",
+      "he": "דלת",
+      "imagePrompt": "cartoon icon of a wooden door with a round handle",
+      "audioText": "door"
+    },
+    {
+      "id": "window",
+      "en": "window",
+      "he": "חלון",
+      "imagePrompt": "cartoon icon of a window with curtains and blue sky",
+      "audioText": "window"
+    },
+    {
+      "id": "kitchen",
+      "en": "kitchen",
+      "he": "מטבח",
+      "imagePrompt": "cartoon icon of a kitchen with a pot on the stove",
+      "audioText": "kitchen"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "I have a big house.",
+      "he": "יש לי בית גדול.",
+      "matchImagePrompt": "cartoon icon of a small house with a red roof",
+      "matchWordId": "house",
+      "distractorWordIds": ["room", "kitchen"]
+    },
+    {
+      "id": "s2",
+      "en": "My bed is in my room.",
+      "he": "המיטה שלי בחדר שלי.",
+      "matchImagePrompt": "cartoon icon of a bed with a pillow and blanket",
+      "matchWordId": "bed",
+      "distractorWordIds": ["door", "window"]
+    },
+    {
+      "id": "s3",
+      "en": "Open the door, please.",
+      "he": "תפתח/י את הדלת, בבקשה.",
+      "matchImagePrompt": "cartoon icon of a wooden door with a round handle",
+      "matchWordId": "door",
+      "distractorWordIds": ["window", "bed"]
+    },
+    {
+      "id": "s4",
+      "en": "My family is in the kitchen.",
+      "he": "המשפחה שלי במטבח.",
+      "matchImagePrompt": "cartoon icon of a kitchen with a pot on the stove",
+      "matchWordId": "kitchen",
+      "distractorWordIds": ["room", "house"]
+    }
+  ],
+  "speakingPrompts": [
+    {
+      "id": "sp1",
+      "promptHe": "תגיד/י: יש לי בית גדול",
+      "expectedPhrase": "i have a big house",
+      "acceptableVariants": ["i have big house", "i have got a big house"]
+    },
+    {
+      "id": "sp2",
+      "promptHe": "תגיד/י: המיטה שלי בחדר שלי",
+      "expectedPhrase": "my bed is in my room",
+      "acceptableVariants": ["my bed is in the room", "my bed is in my bedroom"]
+    }
+  ],
+  "game": {
+    "type": "matching",
+    "wordIds": ["house", "room", "bed", "door", "window", "kitchen"]
+  }
+}

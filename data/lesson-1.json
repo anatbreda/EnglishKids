@@ -1,0 +1,103 @@
+{
+  "lessonId": 1,
+  "title": "Family & Me",
+  "titleHe": "משפחה ואני",
+  "introHe": "היום נלמד לדבר על המשפחה שלנו באנגלית!",
+  "reviewWords": [],
+  "newWords": [
+    {
+      "id": "mother",
+      "en": "mother",
+      "he": "אמא",
+      "imagePrompt": "cartoon icon of a smiling mother",
+      "audioText": "mother"
+    },
+    {
+      "id": "father",
+      "en": "father",
+      "he": "אבא",
+      "imagePrompt": "cartoon icon of a smiling father",
+      "audioText": "father"
+    },
+    {
+      "id": "sister",
+      "en": "sister",
+      "he": "אחות",
+      "imagePrompt": "cartoon icon of a young girl with pigtails",
+      "audioText": "sister"
+    },
+    {
+      "id": "brother",
+      "en": "brother",
+      "he": "אח",
+      "imagePrompt": "cartoon icon of a young boy",
+      "audioText": "brother"
+    },
+    {
+      "id": "baby",
+      "en": "baby",
+      "he": "תינוק",
+      "imagePrompt": "cartoon icon of a happy baby with a pacifier",
+      "audioText": "baby"
+    },
+    {
+      "id": "family",
+      "en": "family",
+      "he": "משפחה",
+      "imagePrompt": "cartoon icon of a family of four standing together",
+      "audioText": "family"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "This is my mother.",
+      "he": "זאת אמא שלי.",
+      "matchImagePrompt": "cartoon icon of a smiling mother",
+      "matchWordId": "mother",
+      "distractorWordIds": ["father", "brother"]
+    },
+    {
+      "id": "s2",
+      "en": "I have a brother.",
+      "he": "יש לי אח.",
+      "matchImagePrompt": "cartoon icon of a young boy",
+      "matchWordId": "brother",
+      "distractorWordIds": ["sister", "baby"]
+    },
+    {
+      "id": "s3",
+      "en": "She is my sister.",
+      "he": "היא האחות שלי.",
+      "matchImagePrompt": "cartoon icon of a young girl with pigtails",
+      "matchWordId": "sister",
+      "distractorWordIds": ["mother", "brother"]
+    },
+    {
+      "id": "s4",
+      "en": "My family is big.",
+      "he": "המשפחה שלי גדולה.",
+      "matchImagePrompt": "cartoon icon of a family of four standing together",
+      "matchWordId": "family",
+      "distractorWordIds": ["baby", "father"]
+    }
+  ],
+  "speakingPrompts": [
+    {
+      "id": "sp1",
+      "promptHe": "תגיד/י: זאת אמא שלי",
+      "expectedPhrase": "this is my mother",
+      "acceptableVariants": ["this is my mom", "that is my mother", "this is mother"]
+    },
+    {
+      "id": "sp2",
+      "promptHe": "תגיד/י: יש לי אחות",
+      "expectedPhrase": "i have a sister",
+      "acceptableVariants": ["i have sister", "i have a brother", "i have got a sister"]
+    }
+  ],
+  "game": {
+    "type": "matching",
+    "wordIds": ["mother", "father", "brother", "sister", "baby", "family"]
+  }
+}

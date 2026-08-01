@@ -1,0 +1,132 @@
+{
+  "lessonId": 6,
+  "title": "Body & Feelings",
+  "titleHe": "גוף ורגשות",
+  "introHe": "היום נלמד להגיד איך אנחנו מרגישים ואיך קוראים לאיברי הגוף.",
+  "reviewWords": ["dog", "big"],
+  "newWords": [
+    {
+      "id": "hand",
+      "en": "hand",
+      "he": "יד",
+      "imagePrompt": "cartoon icon of an open waving hand",
+      "audioText": "hand"
+    },
+    {
+      "id": "head",
+      "en": "head",
+      "he": "ראש",
+      "imagePrompt": "cartoon icon of a child's head in profile",
+      "audioText": "head"
+    },
+    {
+      "id": "eyes",
+      "en": "eyes",
+      "he": "עיניים",
+      "imagePrompt": "cartoon icon of two big brown eyes",
+      "audioText": "eyes"
+    },
+    {
+      "id": "happy",
+      "en": "happy",
+      "he": "שמח/ה",
+      "imagePrompt": "cartoon icon of a big smiling happy face",
+      "audioText": "happy"
+    },
+    {
+      "id": "sad",
+      "en": "sad",
+      "he": "עצוב/ה",
+      "imagePrompt": "cartoon icon of a sad face with a tear",
+      "audioText": "sad"
+    },
+    {
+      "id": "tired",
+      "en": "tired",
+      "he": "עייף/ה",
+      "imagePrompt": "cartoon icon of a sleepy yawning face",
+      "audioText": "tired"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "I am happy.",
+      "he": "אני שמח/ה.",
+      "matchImagePrompt": "cartoon icon of a big smiling happy face",
+      "matchWordId": "happy",
+      "distractorWordIds": ["sad", "tired"]
+    },
+    {
+      "id": "s2",
+      "en": "My eyes are brown.",
+      "he": "העיניים שלי חומות.",
+      "matchImagePrompt": "cartoon icon of two big brown eyes",
+      "matchWordId": "eyes",
+      "distractorWordIds": ["hand", "head"]
+    },
+    {
+      "id": "s3",
+      "en": "I am tired today.",
+      "he": "אני עייף/ה היום.",
+      "matchImagePrompt": "cartoon icon of a sleepy yawning face",
+      "matchWordId": "tired",
+      "distractorWordIds": ["happy", "sad"]
+    },
+    {
+      "id": "s4",
+      "en": "She is sad.",
+      "he": "היא עצובה.",
+      "matchImagePrompt": "cartoon icon of a sad face with a tear",
+      "matchWordId": "sad",
+      "distractorWordIds": ["happy", "tired"]
+    }
+  ],
+  "speakingPrompts": [
+    {
+      "id": "sp1",
+      "promptHe": "תגיד/י: אני שמח/ה",
+      "expectedPhrase": "i am happy",
+      "acceptableVariants": ["im happy", "i'm happy", "i am very happy"]
+    },
+    {
+      "id": "sp2",
+      "promptHe": "תגיד/י: אני עייף/ה היום",
+      "expectedPhrase": "i am tired today",
+      "acceptableVariants": ["im tired today", "i'm tired today", "i am tired"]
+    }
+  ],
+  "game": {
+    "type": "sentence-picture",
+    "items": [
+      {
+        "id": "g1",
+        "en": "I am happy.",
+        "he": "אני שמח/ה.",
+        "answerWordId": "happy",
+        "optionWordIds": ["happy", "sad", "tired", "eyes"]
+      },
+      {
+        "id": "g2",
+        "en": "She is sad.",
+        "he": "היא עצובה.",
+        "answerWordId": "sad",
+        "optionWordIds": ["sad", "happy", "hand", "tired"]
+      },
+      {
+        "id": "g3",
+        "en": "I am tired today.",
+        "he": "אני עייף/ה היום.",
+        "answerWordId": "tired",
+        "optionWordIds": ["tired", "happy", "sad", "head"]
+      },
+      {
+        "id": "g4",
+        "en": "My eyes are brown.",
+        "he": "העיניים שלי חומות.",
+        "answerWordId": "eyes",
+        "optionWordIds": ["eyes", "hand", "head", "happy"]
+      }
+    ]
+  }
+}

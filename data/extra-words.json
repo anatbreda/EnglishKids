@@ -1,0 +1,12 @@
+{
+  "_comment": "מילים שמופיעות במשפטים של השיעורים אך לא נלמדות כמילה חדשה בפני עצמה. הן נחוצות כדי ש-reviewWords יוכל להפנות אליהן (למשל 'big' בשיעור 6).",
+  "words": [
+    {
+      "id": "big",
+      "en": "big",
+      "he": "גדול",
+      "imagePrompt": "cartoon icon of a big elephant next to a small mouse",
+      "audioText": "big"
+    }
+  ]
+}

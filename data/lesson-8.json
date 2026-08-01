@@ -1,0 +1,138 @@
+{
+  "lessonId": 8,
+  "title": "My Day",
+  "titleHe": "היום שלי",
+  "introHe": "השיעור האחרון! היום נספר על כל היום שלנו באנגלית.",
+  "reviewWords": ["happy", "family", "dog"],
+  "newWords": [
+    {
+      "id": "morning",
+      "en": "morning",
+      "he": "בוקר",
+      "imagePrompt": "cartoon icon of a sun rising over hills",
+      "audioText": "morning"
+    },
+    {
+      "id": "get_up",
+      "en": "get up",
+      "he": "קם/ה",
+      "imagePrompt": "cartoon icon of a child getting out of bed and stretching",
+      "audioText": "get up"
+    },
+    {
+      "id": "eat",
+      "en": "eat",
+      "he": "אוכל/ת",
+      "imagePrompt": "cartoon icon of a plate with a fork and a spoon",
+      "audioText": "eat"
+    },
+    {
+      "id": "play",
+      "en": "play",
+      "he": "משחק/ת",
+      "imagePrompt": "cartoon icon of a colorful ball and toy blocks",
+      "audioText": "play"
+    },
+    {
+      "id": "sleep",
+      "en": "sleep",
+      "he": "ישן/ה",
+      "imagePrompt": "cartoon icon of a pillow with Z Z Z letters",
+      "audioText": "sleep"
+    },
+    {
+      "id": "night",
+      "en": "night",
+      "he": "לילה",
+      "imagePrompt": "cartoon icon of a moon and stars in a dark sky",
+      "audioText": "night"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "I get up in the morning.",
+      "he": "אני קם/ה בבוקר.",
+      "matchImagePrompt": "cartoon icon of a child getting out of bed",
+      "matchWordId": "get_up",
+      "distractorWordIds": ["sleep", "night"]
+    },
+    {
+      "id": "s2",
+      "en": "I eat breakfast.",
+      "he": "אני אוכל/ת ארוחת בוקר.",
+      "matchImagePrompt": "cartoon icon of a plate with a fork and a spoon",
+      "matchWordId": "eat",
+      "distractorWordIds": ["play", "sleep"]
+    },
+    {
+      "id": "s3",
+      "en": "I play with my dog.",
+      "he": "אני משחק/ת עם הכלב שלי.",
+      "matchImagePrompt": "cartoon icon of a colorful ball and toy blocks",
+      "matchWordId": "play",
+      "distractorWordIds": ["eat", "morning"]
+    },
+    {
+      "id": "s4",
+      "en": "I sleep at night.",
+      "he": "אני ישן/ה בלילה.",
+      "matchImagePrompt": "cartoon icon of a moon and stars",
+      "matchWordId": "night",
+      "distractorWordIds": ["morning", "eat"]
+    }
+  ],
+  "speakingPrompts": [
+    {
+      "id": "sp1",
+      "promptHe": "תגיד/י: אני קם/ה בבוקר",
+      "expectedPhrase": "i get up in the morning",
+      "acceptableVariants": ["i get up in morning", "i wake up in the morning"]
+    },
+    {
+      "id": "sp2",
+      "promptHe": "תגיד/י: אני משחק/ת עם הכלב שלי",
+      "expectedPhrase": "i play with my dog",
+      "acceptableVariants": ["i play with the dog", "i play with my dogs"]
+    }
+  ],
+  "game": {
+    "type": "fill-word",
+    "isFinalRecap": true,
+    "recapTitleHe": "היום שלי — לפי הסדר",
+    "items": [
+      {
+        "id": "g1",
+        "textBefore": "I get up in the",
+        "textAfter": ".",
+        "he": "אני קם/ה בבוקר.",
+        "answerWordId": "morning",
+        "optionWordIds": ["morning", "night", "sleep"]
+      },
+      {
+        "id": "g2",
+        "textBefore": "I",
+        "textAfter": "breakfast with my family.",
+        "he": "אני אוכל/ת ארוחת בוקר עם המשפחה שלי.",
+        "answerWordId": "eat",
+        "optionWordIds": ["eat", "play", "sleep"]
+      },
+      {
+        "id": "g3",
+        "textBefore": "I",
+        "textAfter": "with my dog. I am happy!",
+        "he": "אני משחק/ת עם הכלב שלי. אני שמח/ה!",
+        "answerWordId": "play",
+        "optionWordIds": ["play", "eat", "get_up"]
+      },
+      {
+        "id": "g4",
+        "textBefore": "I",
+        "textAfter": "at night.",
+        "he": "אני ישן/ה בלילה.",
+        "answerWordId": "sleep",
+        "optionWordIds": ["sleep", "play", "morning"]
+      }
+    ]
+  }
+}

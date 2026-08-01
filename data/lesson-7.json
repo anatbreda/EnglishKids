@@ -1,0 +1,110 @@
+{
+  "lessonId": 7,
+  "title": "Colors, Numbers & Weather",
+  "titleHe": "צבעים, מספרים ומזג אוויר",
+  "introHe": "היום נלמד צבעים, מספרים ומזג אוויר.",
+  "reviewWords": ["happy", "cat"],
+  "newWords": [
+    {
+      "id": "red",
+      "en": "red",
+      "he": "אדום",
+      "imagePrompt": "cartoon icon of a red paint splash",
+      "audioText": "red"
+    },
+    {
+      "id": "blue",
+      "en": "blue",
+      "he": "כחול",
+      "imagePrompt": "cartoon icon of a blue paint splash",
+      "audioText": "blue"
+    },
+    {
+      "id": "one",
+      "en": "one",
+      "he": "אחת",
+      "imagePrompt": "cartoon icon of the number one with one star",
+      "audioText": "one"
+    },
+    {
+      "id": "two",
+      "en": "two",
+      "he": "שתיים",
+      "imagePrompt": "cartoon icon of the number two with two stars",
+      "audioText": "two"
+    },
+    {
+      "id": "three",
+      "en": "three",
+      "he": "שלוש",
+      "imagePrompt": "cartoon icon of the number three with three stars",
+      "audioText": "three"
+    },
+    {
+      "id": "sunny",
+      "en": "sunny",
+      "he": "שמשי",
+      "imagePrompt": "cartoon icon of a bright smiling sun",
+      "audioText": "sunny"
+    },
+    {
+      "id": "rainy",
+      "en": "rainy",
+      "he": "גשום",
+      "imagePrompt": "cartoon icon of a cloud with rain drops",
+      "audioText": "rainy"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "I have two dogs.",
+      "he": "יש לי שני כלבים.",
+      "matchImagePrompt": "cartoon icon of the number two",
+      "matchWordId": "two",
+      "distractorWordIds": ["one", "three"]
+    },
+    {
+      "id": "s2",
+      "en": "The sky is blue.",
+      "he": "השמיים כחולים.",
+      "matchImagePrompt": "cartoon icon of a blue paint splash",
+      "matchWordId": "blue",
+      "distractorWordIds": ["red", "sunny"]
+    },
+    {
+      "id": "s3",
+      "en": "It is sunny today.",
+      "he": "היום שמשי.",
+      "matchImagePrompt": "cartoon icon of a bright smiling sun",
+      "matchWordId": "sunny",
+      "distractorWordIds": ["rainy", "blue"]
+    },
+    {
+      "id": "s4",
+      "en": "I have three books.",
+      "he": "יש לי שלושה ספרים.",
+      "matchImagePrompt": "cartoon icon of the number three",
+      "matchWordId": "three",
+      "distractorWordIds": ["two", "one"]
+    }
+  ],
+  "speakingPrompts": [
+    {
+      "id": "sp1",
+      "promptHe": "תגיד/י: השמיים כחולים",
+      "expectedPhrase": "the sky is blue",
+      "acceptableVariants": ["sky is blue", "the sky is very blue"]
+    },
+    {
+      "id": "sp2",
+      "promptHe": "תגיד/י: היום שמשי",
+      "expectedPhrase": "it is sunny today",
+      "acceptableVariants": ["its sunny today", "it's sunny today", "it is sunny"]
+    }
+  ],
+  "game": {
+    "type": "matching",
+    "wordIds": ["red", "blue", "one", "two", "three", "sunny", "rainy"]
+  }
+}

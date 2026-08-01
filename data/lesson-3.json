@@ -1,0 +1,132 @@
+{
+  "lessonId": 3,
+  "title": "Food & Drinks",
+  "titleHe": "אוכל ושתייה",
+  "introHe": "היום נלמד להגיד מה אנחנו אוהבים לאכול ולשתות.",
+  "reviewWords": ["house", "family"],
+  "newWords": [
+    {
+      "id": "apple",
+      "en": "apple",
+      "he": "תפוח",
+      "imagePrompt": "cartoon icon of a red apple with a green leaf",
+      "audioText": "apple"
+    },
+    {
+      "id": "bread",
+      "en": "bread",
+      "he": "לחם",
+      "imagePrompt": "cartoon icon of a loaf of bread",
+      "audioText": "bread"
+    },
+    {
+      "id": "water",
+      "en": "water",
+      "he": "מים",
+      "imagePrompt": "cartoon icon of a glass of water",
+      "audioText": "water"
+    },
+    {
+      "id": "milk",
+      "en": "milk",
+      "he": "חלב",
+      "imagePrompt": "cartoon icon of a milk carton",
+      "audioText": "milk"
+    },
+    {
+      "id": "pizza",
+      "en": "pizza",
+      "he": "פיצה",
+      "imagePrompt": "cartoon icon of a pizza slice with pepperoni",
+      "audioText": "pizza"
+    },
+    {
+      "id": "like",
+      "en": "like",
+      "he": "אוהב/ת",
+      "imagePrompt": "cartoon icon of a red heart with a smile",
+      "audioText": "like"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "en": "I like pizza.",
+      "he": "אני אוהב/ת פיצה.",
+      "matchImagePrompt": "cartoon icon of a pizza slice",
+      "matchWordId": "pizza",
+      "distractorWordIds": ["apple", "bread"]
+    },
+    {
+      "id": "s2",
+      "en": "I don't like milk.",
+      "he": "אני לא אוהב/ת חלב.",
+      "matchImagePrompt": "cartoon icon of a milk carton",
+      "matchWordId": "milk",
+      "distractorWordIds": ["water", "apple"]
+    },
+    {
+      "id": "s3",
+      "en": "Can I have water, please?",
+      "he": "אפשר לקבל מים, בבקשה?",
+      "matchImagePrompt": "cartoon icon of a glass of water",
+      "matchWordId": "water",
+      "distractorWordIds": ["milk", "bread"]
+    },
+    {
+      "id": "s4",
+      "en": "She likes apples.",
+      "he": "היא אוהבת תפוחים.",
+      "matchImagePrompt": "cartoon icon of a red apple",
+      "matchWordId": "apple",
+      "distractorWordIds": ["pizza", "milk"]
+    }
+  ],
+  "speakingPrompts": [
+    {
+      "id": "sp1",
+      "promptHe": "תגיד/י: אני אוהב/ת פיצה",
+      "expectedPhrase": "i like pizza",
+      "acceptableVariants": ["i like pizzas", "i really like pizza"]
+    },
+    {
+      "id": "sp2",
+      "promptHe": "תגיד/י: אפשר לקבל מים, בבקשה?",
+      "expectedPhrase": "can i have water please",
+      "acceptableVariants": ["can i have some water please", "can i have water"]
+    }
+  ],
+  "game": {
+    "type": "sentence-picture",
+    "items": [
+      {
+        "id": "g1",
+        "en": "I like pizza.",
+        "he": "אני אוהב/ת פיצה.",
+        "answerWordId": "pizza",
+        "optionWordIds": ["pizza", "bread", "milk", "apple"]
+      },
+      {
+        "id": "g2",
+        "en": "Can I have water, please?",
+        "he": "אפשר לקבל מים, בבקשה?",
+        "answerWordId": "water",
+        "optionWordIds": ["water", "milk", "apple", "bread"]
+      },
+      {
+        "id": "g3",
+        "en": "She likes apples.",
+        "he": "היא אוהבת תפוחים.",
+        "answerWordId": "apple",
+        "optionWordIds": ["apple", "pizza", "water", "bread"]
+      },
+      {
+        "id": "g4",
+        "en": "I eat bread in the kitchen.",
+        "he": "אני אוכל/ת לחם במטבח.",
+        "answerWordId": "bread",
+        "optionWordIds": ["bread", "milk", "pizza", "house"]
+      }
+    ]
+  }
+}

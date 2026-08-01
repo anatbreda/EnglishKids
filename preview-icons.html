@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>גלריית אייקונים — English Kids</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .sheet { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
+    .cell { background: #fff; border-radius: 14px; padding: 8px; text-align: center; box-shadow: var(--shadow); }
+    .cell svg { width: 84px; height: 84px; }
+    .cell .n { font-size: .85rem; font-weight: 700; color: var(--blue-dark); direction: ltr; }
+  </style>
+</head>
+<body>
+  <main class="screen">
+    <h1 class="center">גלריית אייקונים ודמויות</h1>
+    <p class="center muted">עמוד עזר לבדיקה חזותית — לא חלק מהקורס עצמו.</p>
+    <h2>הדמויות המלוות</h2>
+    <div class="sheet" id="chars"></div>
+    <h2 style="margin-top:24px">דמות עם כל הפריטים</h2>
+    <div class="sheet" id="charsFull"></div>
+    <h2 style="margin-top:24px">אייקוני המילים</h2>
+    <div class="sheet" id="icons"></div>
+  </main>
+  <script src="data/lessons.bundle.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/characters.js"></script>
+  <script>
+    var allItems = Characters.items.map(function (i) { return i.id; });
+    document.getElementById('chars').innerHTML = Characters.list.map(function (c) {
+      return '<div class="cell">' + Characters.svg(c.id, {}) + '<div class="n">' + c.nameHe + '</div></div>';
+    }).join('');
+    document.getElementById('charsFull').innerHTML = Characters.list.map(function (c) {
+      return '<div class="cell">' + Characters.svg(c.id, { items: allItems }) + '<div class="n">' + c.nameHe + '</div></div>';
+    }).join('');
+    var bank = {};
+    (window.__LESSON_BUNDLE__.lessons || []).forEach(function (l) {
+      l.newWords.forEach(function (w) { bank[w.id] = w; });
+    });
+    (window.__LESSON_BUNDLE__.extraWords.words || []).forEach(function (w) { bank[w.id] = w; });
+    document.getElementById('icons').innerHTML = WordIcons.ids().map(function (id) {
+      var w = bank[id] || { en: id, he: '' };
+      return '<div class="cell">' + WordIcons.svg(id) +
+        '<div class="n">' + w.en + '</div><div class="n" style="direction:rtl;color:#5f7183">' + (w.he || '') + '</div></div>';
+    }).join('');
+  </script>
+</body>
+</html>
