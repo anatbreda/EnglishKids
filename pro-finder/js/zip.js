@@ -52,9 +52,16 @@
 
   /**
    * @param {ArrayBuffer} buffer
-   * @returns {Promise<Array<{name: string, bytes: Uint8Array}>>}
+   * ייצוא של קבוצה ותיקה מכיל מאות תמונות. אנחנו צריכים רק את קובץ הצ'אט
+   * ואת כרטיסי אנשי הקשר, ולכן `wanted` מאפשר לדלג על פריסת כל השאר:
+   * רשומה שלא נבחרה מוחזרת עם שמה בלבד ובלי תוכן, כדי שעדיין אפשר יהיה
+   * לספור מה היה בארכיון בלי לשלם על הזיכרון.
+   *
+   * @param {ArrayBuffer} buffer
+   * @param {?function(string): boolean} wanted
+   * @returns {Promise<Array<{name: string, bytes: ?Uint8Array}>>}
    */
-  function readZip(buffer) {
+  function readZip(buffer, wanted) {
     var all = new Uint8Array(buffer);
     var view = new DataView(buffer);
     var eocd = findEOCD(view, all.length);
@@ -84,8 +91,13 @@
       var lNameLen = view.getUint16(localOffset + 26, true);
       var lExtraLen = view.getUint16(localOffset + 28, true);
       var dataStart = localOffset + 30 + lNameLen + lExtraLen;
-      var data = all.subarray(dataStart, dataStart + compSize);
 
+      if (wanted && !wanted(name)) {
+        jobs.push(Promise.resolve({ name: name, bytes: null }));
+        continue;
+      }
+
+      var data = all.subarray(dataStart, dataStart + compSize);
       jobs.push(
         method === 0
           ? Promise.resolve({ name: name, bytes: data })

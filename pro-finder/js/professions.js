@@ -173,7 +173,9 @@
   var GENDER = '(?:\\/[' + HEB + ']{1,3})?';
 
   var byId = {};
-  var compiled = []; // {categoryId, keyword, weight, re|plain}
+  var compiled = [];   // {categoryId, keyword, weight, re|plain}
+  var gateRe = null;   // שער מהיר לפני 600 הרג'קסים
+  var gateEmoji = [];
 
   function hasHebrew(s) {
     return new RegExp('[' + HEB + ']').test(s);
@@ -212,7 +214,27 @@
     });
   }
 
+  /**
+   * בונה שער מהיר: איחוד של המילה הארוכה מכל צירוף. אם אף אחת מהן לא מופיעה
+   * בטקסט, אף מילת מפתח לא יכולה להתאים — התאמה דורשת את כל מילות הצירוף,
+   * והתחיליות העבריות באות לפני גוף המילה והסיומות אחריו, כך שגוף המילה
+   * תמיד נוכח כמחרוזת ממש. השער חוסך את רוב העבודה על צ'אט ארוך.
+   */
+  function buildGate() {
+    var esc = global.PFUtil.escapeRegExp;
+    var words = {};
+    compiled.forEach(function (e) {
+      if (e.plain) { gateEmoji.push(e.plain); return; }
+      var longest = e.keyword.split(/\s+/).sort(function (a, b) {
+        return b.length - a.length;
+      })[0];
+      words[longest] = true;
+    });
+    gateRe = new RegExp(Object.keys(words).map(esc).join('|'), 'i');
+  }
+
   build();
+  buildGate();
 
   /**
    * כל ההתאמות בטקסט.
@@ -221,9 +243,18 @@
   function matchAll(text) {
     var t = global.PFUtil.clean(text);
     if (!t) return [];
+
+    var hasWord = gateRe.test(t);
+    var hasEmoji = false;
+    for (var k = 0; k < gateEmoji.length; k++) {
+      if (t.indexOf(gateEmoji[k]) !== -1) { hasEmoji = true; break; }
+    }
+    if (!hasWord && !hasEmoji) return [];
+
     var out = [];
     for (var i = 0; i < compiled.length; i++) {
       var e = compiled[i];
+      if (e.plain ? !hasEmoji : !hasWord) continue;
       var hit = e.plain ? t.indexOf(e.plain) !== -1 : e.re.test(t);
       if (hit) out.push({ categoryId: e.categoryId, keyword: e.keyword, weight: e.weight });
     }

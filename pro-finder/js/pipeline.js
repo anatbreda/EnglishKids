@@ -38,8 +38,11 @@
     var filesByKey = {};
     var vcardFiles = 0;
 
+    var skipped = 0;
+
     entries.forEach(function (e) {
       var name = e.name.replace(/^.*\//, ''); // מתעלמים מנתיב פנימי בזיפ
+      if (!e.bytes) { skipped++; return; }     // רשומה שלא נפרסה בכוונה
       if (isChatFile(name)) {
         if (!chat || e.bytes.length > chat.bytes.length) {
           chat = { name: name, bytes: e.bytes };
@@ -59,14 +62,22 @@
 
     result.meta = parsed.meta;
     result.meta.vcardFiles = vcardFiles;
+    result.meta.skippedFiles = skipped;
     result.meta.groupName = groupNameFrom(chat.name);
     result.meta.importedAt = new Date().toISOString();
     return result;
   }
 
+  function needed(name) {
+    var base = name.replace(/^.*\//, '');
+    return isChatFile(base) || isVCardFile(base);
+  }
+
   /** @param {ArrayBuffer} buffer */
   function fromZip(buffer) {
-    return global.PFZip.readZip(buffer).then(fromEntries);
+    // רק הצ'אט וכרטיסי אנשי הקשר נפרסים. תמונות וסרטונים בארכיון נספרים
+    // ומדולגים, אחרת ייצוא עם מדיה היה מפרק מאות קבצים לזיכרון לחינם.
+    return global.PFZip.readZip(buffer, needed).then(fromEntries);
   }
 
   var api = { fromEntries: fromEntries, fromZip: fromZip };
