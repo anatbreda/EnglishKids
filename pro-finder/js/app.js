@@ -160,7 +160,8 @@
       '<div class="big">📂</div>' +
       '<div><strong>גררו לכאן את קובץ ה-ZIP</strong></div>' +
       '<div class="muted tiny">או לחצו כדי לבחור קובץ · אפשר גם קובץ .txt לבד או תיקייה מחולצת</div>' +
-      '<input type="file" id="file" accept=".zip,.txt,.vcf" multiple hidden>' +
+      '<input type="file" id="file" multiple hidden ' +
+      'accept=".zip,.txt,.vcf,application/zip,application/x-zip-compressed,text/plain,text/vcard">' +
       '</div>' +
       '<div class="privacy">🔒 <strong>הכל נשאר במכשיר הזה.</strong> ' +
       'הקובץ מפוענח בדפדפן, התוצאה נשמרת מקומית, ושום שם או מספר טלפון לא נשלח לשרת ' +
@@ -439,11 +440,13 @@
       '<div class="card stack">' +
       '<h3>גיבוי</h3>' +
       '<p class="muted tiny">קובץ JSON להעברה למכשיר אחר. הוא מכיל מספרי טלפון — כדאי לשמור אותו במקום פרטי.</p>' +
+      '<p class="muted tiny">בסאפארי בנייד יש מנגנון שמוחק אחסון של אתרים שלא נכנסים אליהם כשבוע. ' +
+      'הוספה למסך הבית (שיתוף ← הוספה למסך הבית) פוטרת את האתר מזה, וגיבוי מדי פעם נותן רשת ביטחון.</p>' +
       '<div class="btn-row">' +
       '<button class="btn btn-ghost" data-action="export">הורדת גיבוי</button>' +
       '<button class="btn btn-ghost" data-action="import-json">טעינת גיבוי</button>' +
       '</div>' +
-      '<input type="file" id="jsonfile" accept="application/json,.json" hidden>' +
+      '<input type="file" id="jsonfile" hidden accept=".json,application/json,text/plain">' +
       '</div>' +
 
       '<div class="card stack">' +
