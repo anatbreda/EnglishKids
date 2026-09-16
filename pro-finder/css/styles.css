@@ -133,7 +133,11 @@ html, body {
   font-size: 18px;
   margin: 0;
   flex: 1;
+  min-width: 0;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .icon-btn {
@@ -203,6 +207,10 @@ html, body {
 
 h2 { font-size: 19px; margin: 0 0 4px; }
 h3 { font-size: 16px; margin: 0 0 6px; }
+
+/* כתובות מייל ואתרים בתוך שם איש קשר הן מילה אחת ארוכה שלא נשברת מעצמה. */
+h2, h3, .quote, .person-main { overflow-wrap: anywhere; }
+.person-main .nm, .person-main .sub { overflow-wrap: normal; }
 
 .section-title {
   font-size: 14px;
@@ -275,8 +283,26 @@ h3 { font-size: 16px; margin: 0 0 6px; }
   font-size: 20px;
 }
 
-.person-main { flex: 1; min-width: 0; }
-.person-main .nm { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* שמות עסקים בכרטיסי ווטסאפ ארוכים מאוד ("מרפאת שיניים- ד״ר מור בנצי
+   Dental@mor-clinic.co.il"). בלי טור אנכי וקטיעה מפורשת הם דוחפים את
+   השורה מעבר לרוחב המסך וגוררים גלילה אופקית בנייד. */
+.person-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.person-main .nm,
+.person-main .sub {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.person-main .nm { font-weight: 600; }
 .person-main .sub { font-size: 13px; color: var(--ink-soft); }
 
 /* --------------------------- תגיות --------------------------- */
